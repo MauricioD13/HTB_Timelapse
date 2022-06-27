@@ -1,0 +1,16 @@
+Herramienta fcrackzip para hacer una ataque de diccionario a el archivo zip winrm_backup.zip encriptado con contraseña. El diccionario a usar es el rockyou
+
+Comando: fcrackzip -D -u winrm_backup.zip -p /usr/share/wordlists/rockyou.txt
+
+Contraseña = supremelegacy
+Al obtener la contraseña tenemos un archivo .pfx el cual tambien esta encriptado 
+
+Para desencriptar este archivo se usará la herramienta john 
+
+Comando: john -w=/usr/share/wordlists/rockyou.txt pfx_timelapse.hash --rule /usr/share/john/rules/rockyou-30000.rule
+
+La entrada sera el diccionario y se uso la regla rockyou-30000 para agregar modificaciones al diccionario
+
+Contraseña = thuglegacy
+
+
